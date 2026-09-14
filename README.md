@@ -94,4 +94,3 @@ pacman -Qqm > packages/aur.txt
 
 The Hyprland configuration is based on
 [JaKooLit/Hyprland-Dots](https://github.com/JaKooLit/Hyprland-Dots).
-# dotfiles

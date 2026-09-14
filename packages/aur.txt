@@ -1,4 +1,7 @@
+bibata-cursor-theme-bin
 claude-desktop-bin
+flat-remix
+flat-remix-gtk
 obsidian-bin
 teamviewer
 ttf-victor-mono
