@@ -84,9 +84,35 @@ install_yay() {
   ok "yay installed"
 }
 
+# Headers for whichever kernel this machine actually runs. DKMS packages
+# (virtualbox-host-dkms, for one) fail to build their modules without them,
+# and the right name depends on the kernel chosen at install time.
+install_kernel_headers() {
+  local candidates headers=()
+  mapfile -t candidates < <(pacman -Qq 2>/dev/null | grep -xE 'linux(-[a-z0-9]+)*')
+
+  # A name matching "linux-*" is not necessarily a kernel: linux-firmware and
+  # linux-headers match too. Only a package that ships a vmlinuz image is one.
+  local k
+  for k in "${candidates[@]}"; do
+    if pacman -Ql "$k" 2>/dev/null | grep -qE '/usr/lib/modules/[^/]+/vmlinuz$'; then
+      headers+=("$k-headers")
+    fi
+  done
+
+  if [ "${#headers[@]}" -eq 0 ]; then
+    warn "no kernel package detected, skipping headers"
+    return
+  fi
+
+  run sudo pacman -S --needed --noconfirm "${headers[@]}"
+  ok "kernel headers: ${headers[*]}"
+}
+
 install_packages() {
   step "Installing base tooling"
   run sudo pacman -S --needed --noconfirm git stow rsync base-devel
+  install_kernel_headers
 
   install_yay
 
