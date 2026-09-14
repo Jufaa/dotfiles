@@ -1,0 +1,4 @@
+claude-desktop-bin
+obsidian-bin
+teamviewer
+ttf-victor-mono

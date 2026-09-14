@@ -1,0 +1,428 @@
+// Zed settings — https://zed.dev/docs/configuring-zed
+// Run `zed: open default settings` from the command palette to see every default.
+{
+  // ───────────────────────────────────────────────────────────────
+  // Extensions — installed automatically on startup if missing.
+  // ───────────────────────────────────────────────────────────────
+  "cli_default_open_behavior": "existing_window",
+  "agent_servers": {
+    "opencode": { "type": "registry" }
+  },
+  "auto_install_extensions": {
+    // Themes & icons
+    "vesper": true,
+    "material-icon-theme": true,
+    "icons-modern-material": true,
+    // Languages without built-in support
+    "csharp": true,
+    "java": true,
+    "dart": true,
+    "html": true,
+    "sql": true,
+    "scss": true,
+    "toml": true,
+    "xml": true,
+    "make": true,
+    "dockerfile": true,
+    "env": true,
+    "basher": true,
+    // Node / web ecosystem
+    "prisma": true,
+    "graphql": true,
+    // Git
+    "git-firefly": true
+  },
+
+  // ───────────────────────────────────────────────────────────────
+  // Appearance
+  // ───────────────────────────────────────────────────────────────
+  "theme": {
+    "mode": "dark",
+    "dark": "Matugen",
+    "light": "macOS Classic Light"
+  },
+  "icon_theme": "Icons modern material (Dark)",
+
+  "ui_font_family": "JetBrainsMono Nerd Font",
+  "ui_font_size": 18,
+  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
+  "buffer_font_fallbacks": ["CommitMono Nerd Font", "Noto Sans Mono"],
+  "buffer_font_size": 18,
+  "buffer_line_height": "comfortable",
+  // Ligatures — VS Code "editor.fontLigatures": true.
+  "buffer_font_features": { "calt": true },
+
+  // ───────────────────────────────────────────────────────────────
+  // Minimal chrome — remove everything that is not code.
+  // ───────────────────────────────────────────────────────────────
+  "minimap": { "show": "always" },
+  "scrollbar": { "show": "never" },
+  "cursor_blink": false,
+  "hide_mouse": "on_typing",
+  "current_line_highlight": "gutter",
+  "selection_highlight": true,
+  "unnecessary_code_fade": 0.5,
+  "show_whitespaces": "selection",
+  "vertical_scroll_margin": 8,
+
+  // Title bar — VS Code "window.commandCenter": false
+  // and "workbench.layoutControl.enabled": false.
+  "title_bar": {
+    "show_branch_name": true,
+    "show_project_items": true,
+    "show_onboarding_banner": false,
+    "show_user_picture": false,
+    "show_sign_in": false
+  },
+
+  "tab_bar": {
+    "show": true,
+    "show_nav_history_buttons": false,
+    "show_tab_bar_buttons": false
+  },
+  "tabs": {
+    "file_icons": false,
+    "git_status": true,
+    "show_close_button": "hover",
+    "close_position": "right"
+  },
+  "toolbar": {
+    "breadcrumbs": true,
+    "quick_action_bar": false,
+    "selections_menu": false,
+    "agent_review": false,
+    "code_actions": false
+  },
+  "gutter": {
+    "line_numbers": true,
+    "runnables": false,
+    "breakpoints": false,
+    "folds": true
+  },
+  "indent_guides": {
+    "enabled": true,
+    "line_width": 1,
+    "active_line_width": 1,
+    "coloring": "fixed"
+  },
+  "centered_layout": {
+    "left_padding": 0.18,
+    "right_padding": 0.18
+  },
+
+  // Panels: project/git/outline docked left (uthman_dotfiles layout).
+  "project_panel": {
+    "dock": "left",
+    "default_width": 260,
+    "starts_open": true,
+    "button": true,
+    "git_status": true,
+    "indent_size": 16,
+    "auto_reveal_entries": true
+  },
+  "git_panel": {
+    "dock": "left",
+    "default_width": 300,
+    "button": true
+  },
+  "outline_panel": { "dock": "left", "button": false },
+  "collaboration_panel": { "dock": "left", "button": false },
+  "notification_panel": { "dock": "right", "button": false },
+  "chat_panel": { "dock": "right" },
+  "agent": {
+    "dock": "right",
+    "button": false,
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-opus-4.5",
+      "enable_thinking": false
+    },
+    "model_parameters": []
+  },
+
+  // ───────────────────────────────────────────────────────────────
+  // Editing
+  // ───────────────────────────────────────────────────────────────
+  "base_keymap": "VSCode",
+  // Edit predictions off globally, enabled per-language below.
+  "show_edit_predictions": false,
+  "edit_predictions": {
+    "mode": "eager",
+    "provider": "copilot"
+  },
+  "format_on_save": "on",
+  "ensure_final_newline_on_save": true,
+  "remove_trailing_whitespace_on_save": true,
+  "use_autoclose": true,
+  "use_smartcase_search": true,
+  "seed_search_query_from_cursor": "selection",
+  // No wrap guide — the code uses the full pane width.
+  "show_wrap_guides": false,
+  "preferred_line_length": 100,
+  "tab_size": 2,
+
+  // Type hints on, parameter-name noise off.
+  "inlay_hints": {
+    "enabled": true,
+    "show_type_hints": true,
+    "show_parameter_hints": false,
+    "show_other_hints": true,
+    "show_background": false,
+    "edit_debounce_ms": 700,
+    "scroll_debounce_ms": 50
+  },
+
+  "diagnostics": {
+    "include_warnings": true,
+    "inline": {
+      "enabled": true,
+      "max_severity": "warning",
+      "update_debounce_ms": 300
+    }
+  },
+
+  "git": {
+    "git_gutter": "tracked_files",
+    "inline_blame": { "enabled": false }
+  },
+
+  // ───────────────────────────────────────────────────────────────
+  // Terminal
+  // ───────────────────────────────────────────────────────────────
+  "terminal": {
+    "font_family": "JetBrainsMono Nerd Font Mono",
+    "font_features": { "calt": true },
+    "font_size": 18,
+    "line_height": "standard",
+    "blinking": "off",
+    "copy_on_select": true,
+    "button": false,
+    "toolbar": { "breadcrumbs": false }
+  },
+
+  // ───────────────────────────────────────────────────────────────
+  // Language servers
+  // ───────────────────────────────────────────────────────────────
+  "lsp": {
+    // Go — inlay hints (uthman_dotfiles).
+    "gopls": {
+      "initialization_options": {
+        "hints": {
+          "assignVariableTypes": true,
+          "compositeLiteralFields": true,
+          "compositeLiteralTypes": true,
+          "constantValues": true,
+          "functionTypeParameters": true,
+          "parameterNames": true,
+          "rangeVariableTypes": true
+        }
+      }
+    },
+
+    // Rust — clippy instead of plain check, macros expanded.
+    "rust-analyzer": {
+      "initialization_options": {
+        "check": { "command": "clippy" },
+        "cargo": { "buildScripts": { "enable": true }, "allTargets": false },
+        "procMacro": { "enable": true },
+        "inlayHints": {
+          "maxLength": 30,
+          "closureReturnTypeHints": { "enable": "with_block" },
+          "lifetimeElisionHints": { "enable": "never" }
+        },
+        "completion": { "callable": { "snippets": "add_parentheses" } }
+      }
+    },
+
+    // C / C++ — background index + clang-tidy.
+    "clangd": {
+      "binary": {
+        "path": "/usr/bin/clangd",
+        "arguments": [
+          "--background-index",
+          "--clang-tidy",
+          "--header-insertion=iwyu",
+          "--completion-style=detailed",
+          "--function-arg-placeholders=false",
+          "--pch-storage=memory",
+          "-j=4"
+        ]
+      }
+    },
+
+    // Python — pyright for types, ruff for lint + format.
+    "pyright": {
+      "settings": {
+        "python": {
+          "analysis": {
+            "typeCheckingMode": "standard",
+            "diagnosticMode": "openFilesOnly",
+            "autoImportCompletions": true,
+            "autoSearchPaths": true,
+            "useLibraryCodeForTypes": true
+          }
+        }
+      }
+    },
+    "ruff": {
+      "initialization_options": {
+        "settings": {
+          "lineLength": 100,
+          "lint": { "extendSelect": ["I", "UP", "B"] }
+        }
+      }
+    },
+
+    // TypeScript / JavaScript / React / Node — vtsls.
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "tsserver": { "maxTsServerMemory": 8192 },
+          "preferences": { "importModuleSpecifier": "non-relative" },
+          "updateImportsOnFileMove": { "enabled": "always" },
+          "suggest": { "completeFunctionCalls": true },
+          "inlayHints": {
+            "parameterNames": { "enabled": "none" },
+            "variableTypes": { "enabled": false },
+            "propertyDeclarationTypes": { "enabled": true },
+            "functionLikeReturnTypes": { "enabled": true }
+          }
+        },
+        "javascript": {
+          "updateImportsOnFileMove": { "enabled": "always" },
+          "suggest": { "completeFunctionCalls": true },
+          "inlayHints": {
+            "parameterNames": { "enabled": "none" },
+            "variableTypes": { "enabled": false }
+          }
+        },
+        "vtsls": {
+          "experimental": { "completion": { "enableServerSideFuzzyMatch": true } }
+        }
+      }
+    },
+
+    // Java — JDTLS.
+    "jdtls": {
+      "initialization_options": {
+        "settings": {
+          "java": {
+            "format": { "enabled": true },
+            "completion": {
+              "importOrder": ["java", "javax", "jakarta", "org", "com"],
+              "favoriteStaticMembers": [
+                "org.junit.Assert.*",
+                "org.junit.Assume.*",
+                "org.junit.jupiter.api.Assertions.*",
+                "org.junit.jupiter.api.Assumptions.*",
+                "org.junit.jupiter.api.DynamicContainer.*",
+                "org.junit.jupiter.api.DynamicTest.*",
+                "org.mockito.Mockito.*",
+                "org.mockito.ArgumentMatchers.*",
+                "org.mockito.Answers.*"
+              ]
+            },
+            "signatureHelp": { "enabled": true },
+            "inlayhints": { "parameterNames": { "enabled": "none" } },
+            "configuration": { "updateBuildConfiguration": "interactive" }
+          }
+        }
+      }
+    }
+  },
+
+  // ───────────────────────────────────────────────────────────────
+  // Per-language overrides
+  // ───────────────────────────────────────────────────────────────
+  "languages": {
+    "Go": { "show_edit_predictions": true },
+    "Rust": {
+      "tab_size": 4,
+      "formatter": "language_server",
+      "preferred_line_length": 100
+    },
+    "C": {
+      "tab_size": 4,
+      "hard_tabs": false,
+      "formatter": "language_server"
+    },
+    "C++": {
+      "tab_size": 4,
+      "hard_tabs": false,
+      "formatter": "language_server"
+    },
+    "C#": {
+      "tab_size": 4,
+      "formatter": "language_server",
+      "preferred_line_length": 120
+    },
+    "Java": {
+      "tab_size": 4,
+      "formatter": "language_server",
+      "preferred_line_length": 120
+    },
+    "Python": {
+      "tab_size": 4,
+      "language_servers": ["pyright", "ruff"],
+      "format_on_save": "on",
+      "formatter": [
+        { "code_actions": { "source.organizeImports.ruff": true } },
+        { "language_server": { "name": "ruff" } }
+      ]
+    },
+    // Dart / Flutter — ported from the VS Code "[dart]" block.
+    "Dart": {
+      "tab_size": 2,
+      "format_on_save": "on",
+      "use_on_type_format": true,
+      "preferred_line_length": 80,
+      "wrap_guides": [80],
+      "completions": { "words": "disabled" }
+    },
+    "JavaScript": { "tab_size": 2, "formatter": "prettier" },
+    "TypeScript": { "tab_size": 2, "formatter": "prettier" },
+    "TSX": { "tab_size": 2, "formatter": "prettier" },
+    "HTML": { "tab_size": 2, "formatter": "prettier" },
+    "CSS": { "tab_size": 2, "formatter": "prettier" },
+    "SCSS": { "tab_size": 2, "formatter": "prettier" },
+    "JSON": { "tab_size": 2, "formatter": "prettier" },
+    "JSONC": { "tab_size": 2, "formatter": "prettier" },
+    "YAML": { "tab_size": 2, "formatter": "prettier" },
+    "SQL": {
+      "tab_size": 2,
+      "format_on_save": "off",
+      "preferred_line_length": 120
+    },
+    "Markdown": {
+      "soft_wrap": "editor_width",
+      "format_on_save": "off",
+      "show_wrap_guides": false,
+      "remove_trailing_whitespace_on_save": false
+    },
+    "Shell Script": { "tab_size": 2 }
+  },
+
+  // ───────────────────────────────────────────────────────────────
+  // Misc
+  // ───────────────────────────────────────────────────────────────
+  "telemetry": {
+    "diagnostics": true,
+    "metrics": false
+  },
+  "file_scan_exclusions": [
+    "**/.git",
+    "**/node_modules",
+    "**/target",
+    "**/bin",
+    "**/obj",
+    "**/dist",
+    "**/build",
+    "**/.next",
+    "**/__pycache__",
+    "**/.venv",
+    "**/.pytest_cache",
+    "**/.mypy_cache",
+    "**/.ruff_cache",
+    "**/.DS_Store"
+  ]
+}

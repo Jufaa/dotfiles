@@ -1,0 +1,26 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // Project/git/outline live in the LEFT dock, so ctrl-b toggles that one.
+      // ctrl-alt-b toggles the right dock (agent, notifications, chat).
+      "ctrl-b": "workspace::ToggleLeftDock",
+      "ctrl-alt-b": "workspace::ToggleRightDock",
+      // VS Code parity: focus the file tree without toggling the dock.
+      "ctrl-shift-e": "project_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      // "j k": "vim::NormalBefore"
+    }
+  }
+]

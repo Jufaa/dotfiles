@@ -1,0 +1,20 @@
+# Wallpaper copies written at runtime by the hypr wallpaper scripts (~19 MB
+# of binary that changes every time the background changes).
+home/hypr/.config/hypr/wallpaper_effects/.wallpaper_current
+home/hypr/.config/hypr/wallpaper_effects/.wallpaper_modified
+
+# First-boot marker.
+home/hypr/.config/hypr/.initial_startup_done
+
+# Machine-local state, never shared between machines.
+home/*/.config/*/*.bak
+home/*/.config/*/*.bak-*
+
+# Editor and system noise.
+*~
+*.swp
+*.orig
+.DS_Store
+
+# Runtime state written by the rofi/waybar wallpaper scripts.
+home/rofi/.config/rofi/.current_wallpaper

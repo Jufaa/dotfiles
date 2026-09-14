@@ -1,0 +1,14 @@
+# Copias de la imagen elegida que escriben los scripts de wallpaper en runtime.
+# Son ~19 MB de binario que cambian cada vez que se cambia el fondo.
+wallpaper_effects/.wallpaper_current
+wallpaper_effects/.wallpaper_modified
+
+# Marcador que se crea en el primer arranque.
+.initial_startup_done
+
+# Ruido de editores y del sistema.
+*~
+*.swp
+*.bak
+*.orig
+.DS_Store
